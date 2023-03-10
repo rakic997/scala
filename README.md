@@ -16,3 +16,15 @@ https://fakestoreapi.com/
 
 ## Still in progress
 Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile is done), further design improvements...
+
+## Scripts
+This project was created with Vite.
+
+npm install
+
+npm run dev
+
+npm run build
+
+
+
