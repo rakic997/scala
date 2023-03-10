@@ -1,4 +1,6 @@
-# Live demo: https://scalacommerce.netlify.app/
+# Live demo: 
+https://scalacommerce.netlify.app/
+
 # React (fake) e-commerce website 
 ![Thumbnail](https://github.com/rakic997/scala/blob/main/preview.png)
 
