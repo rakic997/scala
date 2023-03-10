@@ -1,9 +1,9 @@
 
 # React (fake) e-commerce website 
-![Thumbnail1](assets/preview.png)
+![Thumbnail](thumbnail.png)
 
 ## Description
-Scala is an e-commerce platform with essential commerce features. It's built with React, TypeScript, and Sass, using Fake store API. State managed using Context API + useReducer. **The project is still in progress**.
+Scala is an e-commerce platform with essential commerce features. **The project is still in progress**.
 
 ## Tech Stack
 1. HTML
@@ -15,4 +15,4 @@ Scala is an e-commerce platform with essential commerce features. It's built wit
 https://fakestoreapi.com/
 
 ## Still in progress
-Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile), further design improvements...
+Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile is done), further design improvements...
