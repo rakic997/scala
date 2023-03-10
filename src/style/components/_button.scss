@@ -1,0 +1,69 @@
+.add-to-cart {
+    @include flex_container(flex, center);
+    padding: 8px 15px;
+    background-color: $primary;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 36px;
+
+    @include medium-desktop {
+        padding: 8px 12px;
+    }
+
+    svg {
+        min-width: 22px;
+        margin-right: 7px;
+
+        path,
+        circle {
+            fill: #fff;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn {
+    @include flex_container(flex, center);
+
+    > svg {
+        min-width: 22px;
+        margin-right: 7px;
+
+        path,
+        circle {
+            fill: #fff;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.94;
+        transition: 0.2s ease-out;
+    }
+}
+.btn-dark {
+    background-color: $primary;
+    color: #fff;
+}
+.btn-light {
+    background-color: #f0f0f0f0;
+    color: #4a4a4a;
+    border: 1px solid #e1e1e1;
+}
+.btn-size-md {
+    font-size: 14px;
+    padding: 7px 15px;
+}
+.btn-size-lg {
+    font-size: 14.5px;
+    padding: 9px 22px;
+}
+.btn-size-xl {
+    font-size: 16.5px;
+    padding: 11px 34px;
+}

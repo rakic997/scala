@@ -1,0 +1,100 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+$primary: #253D4E;
+
+@mixin flex-container($display: flex, $align-items: '', $justify-content: '') {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin absolute-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ @mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+/* USE CASE 
+div::after {
+    @include pseudo;
+    ...
+} */
+
+@mixin widen($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    }
+ }
+ /* USE CASE
+ @include keyframes(background) {
+    0% {
+      background: white;
+    }
+    50% {
+      background: lightblue;
+    }
+    100% {
+      background: royalblue;
+    } 
+ } */
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+/* USE CASE
+input,  
+textarea {  
+    @include input-placeholder {
+        color: $grey;
+    }
+} */
+
+@mixin mobile {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin ipad {
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin small-desktop {
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin medium-desktop {
+    @media only screen and (min-width: 1200px) and (max-width: 1500px) {
+        @content;
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 16px;
+    // font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}

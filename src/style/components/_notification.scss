@@ -1,0 +1,25 @@
+.notification {
+    @include flex_container(flex, center, center);
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    z-index: 199;
+    width: 400px;
+    height: 200px;
+    padding: 10px 40px;
+    background-color: #fff;
+    box-shadow: 6px  12px 24px rgba(0, 0, 0, 0.2);
+    border-top: 8px solid darken($primary, 20%);
+
+    h6 {
+        font-size: 17px;
+        font-weight: 500;
+        
+        span {
+            font-weight: 700;
+        }
+    }
+}
+.showed {
+    display: flex;
+}

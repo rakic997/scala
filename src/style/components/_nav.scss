@@ -1,0 +1,255 @@
+.top-header {
+    background-color: $primary;
+    height: 40px;
+    line-height: 41px;
+    text-align: center;
+
+    h6 {
+        font-size: 13px;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background: #fff;
+    padding: 0 200px;
+    box-shadow: 4px 8px 18px rgba(0, 0, 0, 0.04);
+
+    @include medium-desktop {
+        padding: 0 100px;
+    }
+
+    @include mobile {
+        padding: 0 30px;
+    }
+
+    .logo {
+        width: 15%;
+
+        @include mobile {
+            width: 30%;
+        }
+
+        a {
+            text-decoration: none;
+            color: $primary;
+
+            h1 {
+                font-size: 27px;
+            }
+        }
+    }
+
+    .links {
+        width: 75%;
+        text-align: center;
+
+        @include mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -70%;
+            z-index: 992;
+            width: 70%;
+            height: 100vh;
+            background: #fff;
+            border-left: 1px solid #cecece;
+            animation: 0.3s slide-in forwards;
+        }
+        .close {
+            display: none;
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 22px;
+                font-weight: 700;
+                background-color: transparent;
+                color: $primary;
+            }
+        }
+    }
+
+    .shown {
+        display: block;
+    }
+
+    .cart-container {
+        position: relative;
+        @include flex_container(flex, center, flex-end);
+        width: 15%;
+
+        @include mobile {
+           // display: none;
+           width: 50%;
+        }
+
+        .open {
+            display: block;
+        }
+    }
+
+    .menu-icon {
+        display: none;
+        width: 42px;
+
+        @include mobile {
+            display: block;
+            width: 32px;
+        }
+    }
+
+    ul {
+        li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0 25px;
+
+            @include mobile {
+                display: block;
+                padding-bottom: 5px;
+            }
+            
+            &:first-child {
+                @include mobile {
+                    margin-top: 40vh;
+                }
+            }
+
+            a {
+                font-size: 16px;
+                font-weight: 500;
+                color: $primary;
+                text-decoration: none;
+
+                @include mobile {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                    transition: 0.2s all;
+                }
+            }
+        }
+    }
+}
+
+.search-icon {
+    width: 25px;
+
+    path {
+        stroke: $primary;
+    }
+
+}
+
+.user-icon {
+    width: 26px;
+
+    @include mobile {
+        width: 22px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    path {
+        fill: $primary;
+    }
+}
+
+.wish-icon {
+    width: 33px;
+    
+    @include mobile {
+        width: 28px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    path {
+        fill: $primary;
+    }
+}
+
+
+.login-content {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 9;
+    display: none;
+
+    .form-group {
+        margin-bottom: 7px;
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+    }
+
+    button {
+        background-color: $primary;
+        color: #fff;
+        font-size: 13px;
+        padding: 6px 14px;
+        margin-top: 8px;
+    }
+}
+
+.product-counter {
+    position: absolute;
+    z-index: 9;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background-color: #901e1e;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 9px;
+    line-height: 17px;
+
+}
+
+.wish-product-counter {
+    top: -2.2px;
+    right: 0;
+}
+
+.cart-product-counter {
+    top: -5px;
+    right: 7px;
+}
+
+@-webkit-keyframes slide-in {
+    0% { right: -70%; }
+    100% { right: 70; }
+}
+
+@keyframes slide-in {
+    0% { right: -70%; }
+    100% { right: 0; }
+}

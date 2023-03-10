@@ -1,0 +1,118 @@
+.product-details {
+    position: relative;
+    display: flex;
+    max-width: 1750px;
+    padding: 200px 200px;
+    background-color: #fff;
+
+    @include mobile {
+        display: block;
+        padding: 50px 30px;
+    }
+
+    &-image {
+        flex: 1;
+
+        img {
+            width: 70%;
+
+            @include mobile {
+                width: 80%;
+                margin: auto;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    &-information {
+        flex: 1;
+
+        h6 {
+            font-size: 15px;
+            color: #adadad;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+
+            @include mobile {
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+        .other {
+            @include flex_container(flex, center, space-between);
+
+            .rating {
+                display: flex;
+                align-items: center;
+                font-size: 25px;
+                margin-top: 15px;
+
+                img {
+                    width: 25px;
+                    margin-left: 5px;
+                }
+            }
+
+            .price {
+                display: inline-block;
+                font-size: 30px;
+                font-weight: 700;
+                margin-top: 20px;
+                color: $primary;
+            }
+        }
+    }
+}
+
+.product-options {
+    @include flex_container(flex, center);
+    margin-top: 20px;
+
+    .quantity {
+        position: relative;
+        width: 140px;
+
+        input {
+            width: 100%;
+            height: 34px;
+            border: 1px solid #ccc;
+        }
+
+        .counter {
+            position: absolute;
+            top: 12px;
+        }
+
+        .up {
+            right: 20px;
+        }
+
+        .down {
+            right: 15px;
+        }
+    }
+
+    .wish-button {
+        @include flex_container(flex, center, center);
+        margin-left: 15px;
+        width: 60px;
+        height: 46px;
+
+        svg {
+            margin: 0;
+        }
+    }
+
+}
