@@ -5,7 +5,7 @@
 ## Description
 Scala is an e-commerce platform with essential commerce features. **The project is still in progress**.
 
-## Tech Stack
+## Technologies
 1. HTML
 2. Sass
 3. TypeScript
@@ -18,13 +18,13 @@ https://fakestoreapi.com/
 Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile is done), further design improvements...
 
 ## Scripts
-This project was created with Vite.
+Instructions:
 
-npm install
+### npm install
 
-npm run dev
+### npm run dev
 
-npm run build
+### npm run build
 
 
 
