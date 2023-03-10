@@ -1,6 +1,6 @@
 
 # React (fake) e-commerce website 
-![Thumbnail](thumbnail.png)
+![Thumbnail](/assets/preview.png)
 
 ## Description
 Scala is an e-commerce platform with essential commerce features. **The project is still in progress**.
