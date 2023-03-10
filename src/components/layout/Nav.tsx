@@ -30,7 +30,7 @@ export default function Nav (): JSX.Element {
             <div className="nav-content">
                 <div className="logo">
                     <Link to="/">
-                        <h1>Clarity</h1>
+                        <h1>Scala</h1>
                     </Link>
                 </div>
                 <div className={isMenuShown ? 'links shown' : 'links'}>
