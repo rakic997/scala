@@ -17,7 +17,7 @@ Scala is an e-commerce platform with essential commerce features. **The project 
 https://fakestoreapi.com/
 
 ## Still in progress
-Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile is done), further design improvements...
+Things I'm looking to work on: Checkout page, notification system, search, further design improvements...
 
 ## Scripts
 
