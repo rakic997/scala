@@ -1,4 +1,4 @@
-
+# Live demo: https://scalacommerce.netlify.app/
 # React (fake) e-commerce website 
 ![Thumbnail](https://github.com/rakic997/scala/blob/main/preview.png)
 
@@ -18,7 +18,6 @@ https://fakestoreapi.com/
 Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile is done), further design improvements...
 
 ## Scripts
-Instructions:
 
 ### npm install
 
