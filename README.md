@@ -22,5 +22,5 @@ Things I'm looking to work on: Checkout page, notification system, search, furth
 ## Instructions
 
 ### npm install
-### nmp run dev
+### npm run dev
 ### npm run build
