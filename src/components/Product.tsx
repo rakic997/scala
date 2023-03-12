@@ -14,24 +14,25 @@ interface ProductProps {
 
 export default function Product ({ product, isCart, isWish }: ProductProps): JSX.Element {
   const [wishIcon, setWishIcon] = useState(false)
-  const { id, image, category, title, description, price } = product
+  const { image, category, title, description, price } = product
 
   const {
     state: { cart, wish },
     dispatch
   } = useCart()
 
-  const isInCart = cart.find((cartProduct: { id: number }) => cartProduct.id === product.id)
-  const isInWishlist = wish.find((wishProduct: { id: number }) => wishProduct.id === product.id)
+  const isInCart = cart.find(({ id }) => id === product.id)
+  const isInWishlist = wish.find(({ id }) => id === product.id)
+  const isNotInCartOrWish = !(isCart ?? false) && !(isWish ?? false)
 
   function handleEnter (): void {
-    if (!(isCart ?? false) && !(isWish ?? false)) {
+    if (isNotInCartOrWish) {
       setWishIcon(true)
     }
   }
 
   function handleLeave (): void {
-    if (!(isCart ?? false) && !(isWish ?? false)) {
+    if (isNotInCartOrWish) {
       setWishIcon(false)
     }
   }
@@ -74,7 +75,7 @@ export default function Product ({ product, isCart, isWish }: ProductProps): JSX
   }
 
   return (
-    <article className='product' key={id} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+    <article className='product' onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
 
       <div className='product-inner'>
         <div className='product-header'>
@@ -83,7 +84,7 @@ export default function Product ({ product, isCart, isWish }: ProductProps): JSX
         <div className='product-body'>
           <h4>{capitalizeFirstLetter(category)}</h4>
           <h6>{title}</h6>
-          <p>{description.slice(0, 62)}...</p>
+          <p>{description}...</p>
         </div>
         <div className='product-footer'>
           <span className='price'>${price}</span>

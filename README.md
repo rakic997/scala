@@ -1,13 +1,11 @@
-# Live demo: 
-https://scalacommerce.netlify.app/
 
 # React (fake) e-commerce website 
-![Thumbnail](https://github.com/rakic997/scala/blob/main/preview.png)
+![Thumbnail1](assets/preview.png)
 
 ## Description
-Scala is an e-commerce platform with essential commerce features. **The project is still in progress**.
+Scala is an e-commerce platform with essential commerce features. It's built with React, TypeScript, and Sass, using Fake store API. State managed using Context API + useReducer. **The project is still in progress**.
 
-## Technologies
+## Tech Stack
 1. HTML
 2. Sass
 3. TypeScript
@@ -17,15 +15,4 @@ Scala is an e-commerce platform with essential commerce features. **The project 
 https://fakestoreapi.com/
 
 ## Still in progress
-Things I'm looking to work on: Checkout page, notification system, search, further design improvements...
-
-## Scripts
-
-### npm install
-
-### npm run dev
-
-### npm run build
-
-
-
+Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile), further design improvements...

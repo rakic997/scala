@@ -7,7 +7,7 @@ import Product from './Product'
 
 export default function Wishlist (): JSX.Element {
   const [isWish, setIsWish] = useState(false)
-  const { state } = useCart()
+  const { state: { wish } } = useCart()
   const ref = useRef<HTMLInputElement>(null)
 
   function handleToggle (): void {
@@ -29,11 +29,11 @@ export default function Wishlist (): JSX.Element {
                 </g>
             </svg>
 
-            {state.wish.length > 0 && <span className='product-counter wish-product-counter'>{state.wish.length}</span>}
+            {wish.length > 0 && <span className='product-counter wish-product-counter'>{wish.length}</span>}
 
             <div className={isWish ? 'wishlist-content open' : 'wishlist-content'}>
-                {state.wish.length > 0
-                  ? state.wish.map((product: IProduct) => (
+                {wish.length > 0
+                  ? wish.map((product: IProduct) => (
                             <div className='cart-item' key={product.id}>
                                 <Product
                                     product={product}

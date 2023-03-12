@@ -1,21 +1,28 @@
 import type IProduct from '../types/types'
 
+enum ActionType {
+  ADD_TO_CART = 'ADD_TO_CART',
+  DELETE_FROM_CART = 'DELETE_FROM_CART',
+  CLEAR_CART = 'CLEAR_CART',
+  ADD_TO_WISH = 'ADD_TO_WISH',
+  DELETE_FROM_WISH = 'DELETE_FROM_WISH',
+}
+
 interface stateProps {
-  cart: any[]
-  wish: any[]
+  cart: IProduct[]
+  wish: IProduct[]
   cartError: boolean
   wished: boolean
 }
 
 interface actionProps {
-  type: any
+  type: ActionType
   payload: any
 }
 
-export const cartReducer = (state: stateProps, action: actionProps): { wished: any, cart: any[], wish: any[], cartError: boolean } => {
+export const cartReducer = (state: stateProps, action: actionProps): { wished: any, cart: IProduct[], wish: IProduct[], cartError: boolean } => {
   switch (action.type) {
     case 'ADD_TO_CART':
-
       return {
         ...state,
         cart: [
@@ -23,7 +30,6 @@ export const cartReducer = (state: stateProps, action: actionProps): { wished: a
           { ...action.payload }
         ]
       }
-
     case 'DELETE_FROM_CART':
       return {
         ...state,
@@ -46,11 +52,6 @@ export const cartReducer = (state: stateProps, action: actionProps): { wished: a
       return {
         ...state,
         wish: state.wish.filter((wishProduct: IProduct) => wishProduct.id !== action.payload.id)
-      }
-    case 'IS_ADDED_TO_WISH':
-      return {
-        ...state,
-        wished: state.wish.find((wishProduct: IProduct) => wishProduct.id === action.payload.id)
       }
     default:
       return state

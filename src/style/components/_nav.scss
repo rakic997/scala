@@ -14,8 +14,10 @@
 .nav-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    max-width: 1920px;
     height: 80px;
+    margin: auto;
+    align-items: center;
     background: #fff;
     padding: 0 200px;
     box-shadow: 4px 8px 18px rgba(0, 0, 0, 0.04);

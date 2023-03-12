@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams, useLocation, Link } from 'react-router-dom'
 
 import Product from '../components/Product'
@@ -17,13 +17,36 @@ export default function Products (): JSX.Element {
   const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products')
   const location = useLocation()
   const { id: category } = useParams()
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  const categoryProducts = products.filter((product: IProduct) => product.category === category)
+  const bredcrumb = location.pathname.replace(/%20/g, ' ')
+
+  function handleSort (sortType: string): (a: any, b: any) => number {
+    switch (sortType) {
+      case 'name':
+        return (a, b) => a.title.localeCompare(b.title)
+      case 'price':
+        return (a, b) => b.price - a.price
+      case 'rating':
+        return (a, b) => b.rating.rate - a.rating.rate
+      default:
+        return () => 0
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const categoryProducts = products.filter((product: IProduct) => product.category === category)
-  const bredcrumb = location.pathname.replace(/%20/g, ' ')
+  useEffect(() => {
+    window.onclick = (event) => {
+      if ((Boolean((event.target as HTMLDivElement).contains(dropdownRef.current))) &&
+          event.target !== dropdownRef.current) {
+        setIsSortDropdownOpen(false)
+      }
+    }
+  }, [])
 
   return (
         <div className='category-page'>
@@ -34,14 +57,14 @@ export default function Products (): JSX.Element {
                 </div>
             </header>
 
-            {(Boolean((error ?? false))) && <h1>Error</h1>}
+            {(Boolean(error)) && <h1>Error</h1>}
             {loading && <Loader />}
             {(Boolean(products)) &&
                 <section className='category'>
                     <div className='container'>
                         <div className='filters'>
                             <span className='products-number'>{categoryProducts.length} results</span>
-                            <div className='sort' onClick={() => { setIsSortDropdownOpen(prev => !prev) }}>
+                            <div className='sort' ref={dropdownRef} onClick={() => { setIsSortDropdownOpen(prev => !prev) }}>
                                 <h6>Sort by</h6>
                                 <ul className={isSortDropdownOpen ? 'sort-options open' : 'sort-options'}>
                                     <li onClick={() => { setSortType('name') }}>Name</li>
@@ -53,13 +76,7 @@ export default function Products (): JSX.Element {
                         </div>
                         <div className='category-products'>
                             {categoryProducts
-                              .sort((a: IProduct, b: IProduct) =>
-                                sortType === 'name'
-                                  ? a.title > b.title ? 1 : -1
-                                  : sortType === 'price'
-                                    ? b.id - a.id
-                                    : b.rating.rate - a.rating.rate
-                              )
+                              .sort(handleSort(sortType))
                               .map((product: IProduct) => (
                                     <div className='product-container' key={product.id}>
                                         <Link to={`/product/${product.id}`}>

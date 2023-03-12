@@ -24,6 +24,7 @@ export default function Nav (): JSX.Element {
 
   return (
         <nav className="nav">
+            <div className='container'></div>
             <div className="top-header">
                 <h6>Get free delivery on order over 100$</h6>
             </div>
