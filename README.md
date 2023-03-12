@@ -17,4 +17,10 @@ Scala is an e-commerce platform with essential commerce features. It's built wit
 https://fakestoreapi.com/
 
 ## Still in progress
-Things I'm looking to work on: Checkout page, notification system, search, responsive (for now, only for mobile), further design improvements...
+Things I'm looking to work on: Checkout page, notification system, search, further design improvements...
+
+## Instructions
+
+# npm install
+# nmp run dev
+# npm run build
